@@ -40,7 +40,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-e86#pne*hqu3qw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'stormy-stream-29671.herokuapp.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
