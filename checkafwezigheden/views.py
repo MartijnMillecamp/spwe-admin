@@ -3,7 +3,7 @@ from django.views import generic
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
-from spweadmin.settings import BASE_DIR
+from spweadmin.settings import BASE_DIR, STATIC_ROOT, STATIC_URL
 from .compare_excel_files import compare_excel_files
 import pandas as pd
 import os
@@ -22,11 +22,13 @@ def index(request):
         data = request.POST
         dag =  data['dag']
         dag = dag.lower()
-        excel_file = request.FILES["excel_file"]
+        print(request.FILES)
+        aanwezig = request.FILES["aanwezigheden"]
+        verwacht = request.FILES["verwachte_lln"]
 
-        df_aanwezig = pd.read_excel(excel_file, sheet_name=0)
-        path_verwacht = os.path.join(BASE_DIR, 'checkafwezigheden\Data\planning_elke_dag.xlsx')
-        df_verwacht = pd.read_excel(path_verwacht, sheet_name=dag)
+
+        df_aanwezig = pd.read_excel(aanwezig, sheet_name=0)
+        df_verwacht = pd.read_excel(verwacht, sheet_name=dag)
         df_niet_aanwezig = compare_excel_files(df_aanwezig, df_verwacht)
         with BytesIO() as b:
             # Use the StringIO object as the filehandle.

@@ -1,16 +1,19 @@
-def compare_excel_files(AanwezigDF, VerwachtDF):
+def compare_excel_files(df_aanwezig, df_verwacht):
+    df_aanwezig.columns= df_aanwezig.columns.str.lower()
+    df_verwacht.columns= df_verwacht.columns.str.lower()
+
     # Creeer id
-    VerwachtDF['id'] = VerwachtDF['naam'] + VerwachtDF['voornaam'] + VerwachtDF['klas']
-    AanwezigDF['id'] = AanwezigDF['naam'] + AanwezigDF['voornaam'] + AanwezigDF['klas']
+    df_verwacht['id'] = df_verwacht['naam'] + df_verwacht['voornaam'] + df_verwacht['klas']
+    df_aanwezig['id'] = df_aanwezig['naam'] + df_aanwezig['voornaam'] + df_aanwezig['klas']
 
     ################################################################################
     # Korte versie om iedereen te vinden die verwacht werd, maar niet aanwezig was #
     ################################################################################
 
     # Maak een lijst van alle leerlingen die aanwezig zijn
-    AanwezigList = AanwezigDF['id'].to_list()
+    AanwezigList = df_aanwezig['id'].to_list()
 
     # Zoek alle leerlingen die niet in die lijst zitten
-    NietAanwezigDF = VerwachtDF.loc[VerwachtDF['id'].isin(AanwezigList) == False]
+    NietAanwezigDF = df_verwacht.loc[df_verwacht['id'].isin(AanwezigList) == False]
 
     return NietAanwezigDF
