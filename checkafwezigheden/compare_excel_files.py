@@ -1,10 +1,13 @@
-def compare_excel_files(df_aanwezig, df_verwacht):
+def compare_excel_files(df_aanwezig, df_verwacht, dag):
     df_aanwezig.columns= df_aanwezig.columns.str.lower()
     df_verwacht.columns= df_verwacht.columns.str.lower()
+    print(df_verwacht)
+    df_verwacht_vandaag = df_verwacht[['klas', 'naam & voornaam', dag]]
+    df_verwacht_vandaag.dropna(inplace=True)
 
     # Creeer id
-    df_verwacht['id'] = df_verwacht['naam'] + df_verwacht['voornaam'] + df_verwacht['klas']
-    df_aanwezig['id'] = df_aanwezig['naam'] + df_aanwezig['voornaam'] + df_aanwezig['klas']
+    df_verwacht['id'] = df_verwacht['naam & voornaam'] + df_verwacht['klas']
+    df_aanwezig['id'] = df_aanwezig['client_name'] + df_aanwezig['division_descr']
 
     ################################################################################
     # Korte versie om iedereen te vinden die verwacht werd, maar niet aanwezig was #
