@@ -28,8 +28,8 @@ def index(request):
 
 
         df_aanwezig = pd.read_excel(aanwezig, sheet_name=0)
-        df_verwacht = pd.read_excel(verwacht, sheet_name=0, sheet_name=dag, usecols=['Klas', 'Naam', 'Voornaam', 'Nummer'])
-        [correct, df_niet_aanwezig, onverwacht_aanwezig]  = compare_excel_files(df_aanwezig, df_verwacht, dag)
+        df_verwacht = pd.read_excel(verwacht, sheet_name=dag, usecols=['Klas', 'Naam', 'Voornaam', 'Nummer'])
+        [correct, df_niet_aanwezig, onverwacht_aanwezig]  = compare_excel_files(df_aanwezig, df_verwacht)
         with BytesIO() as b:
             # Use the StringIO object as the filehandle.
             writer = pd.ExcelWriter(b, engine='xlsxwriter')
