@@ -1,8 +1,6 @@
-# TODO
-
-- ask example file to papa
-- allow to change planning file
-- authentication
+# Deployment
+1) Open terminal and go to spwe-admin
+2) Add and commit changes to main branch
 
 # tutorials
 https://learndjango.com/tutorials/django-login-and-logout-tutorial //failed
