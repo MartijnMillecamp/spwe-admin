@@ -1,6 +1,10 @@
 # Deployment
 1) Open terminal and go to spwe-admin
-2) Add and commit changes to main branch
+2) Update python packages
+```
+pip freeze > requirements.txt
+```
+3) Add and commit changes to main branch
 
 # tutorials
 https://learndjango.com/tutorials/django-login-and-logout-tutorial //failed
