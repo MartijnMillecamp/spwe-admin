@@ -33,7 +33,7 @@ def index(request):
         with BytesIO() as b:
             # Use the StringIO object as the filehandle.
             writer = pd.ExcelWriter(b, engine='xlsxwriter')
-            df_niet_aanwezig.to_excel(writer, sheet_name='Afwezig_' + dag)
+            df_niet_aanwezig.to_excel(writer, sheet_name='Afwezig_' + dag, index=False)
             writer.save()
             today = date.today()
             today_string = today.strftime('%d_%m_%y')

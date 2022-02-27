@@ -17,7 +17,6 @@ def compare_excel_files(df_aanwezig, df_verwacht):
     CorrectAanwezigDF = df_verwacht.loc[df_verwacht['nummer'].isin(AanwezigList) == True]
     NietAanwezigDF = df_verwacht.loc[df_verwacht['nummer'].isin(AanwezigList) == False]
     OnverwachtAanwezigDF = df_aanwezig.loc[df_aanwezig['client_no'].isin(VerwachtList) == False]
-    
     return CorrectAanwezigDF, NietAanwezigDF, OnverwachtAanwezigDF
 
 if __name__ == "__main__":

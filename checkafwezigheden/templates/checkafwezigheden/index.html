@@ -1,53 +1,59 @@
+{% load static %}
 <html>
     <head>
         <title>
-            Excel file upload and processing : Django Example : ThePythonDjango.Com
+            Tool middagmaal
         </title>
+        <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
     </head>
-    <body style="margin-top: 30px;margin-left: 30px;">
-        <form action="{% url "checkafwezigheden:index" %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div
-                style="display: flex; flex-direction:row"
-            >
-                <p>Dag van de week: </p>
-                <input 
-                    type="text" 
-                    title="Dag van de week"
-                    name="dag"
-                    style="border: 1px solid black; padding: 5px;"
-                    required="required"
-
+    <body>
+        <div id="header"></div>
+        <div id="formcontainer">
+            <form action="{% url "checkafwezigheden:index" %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div
+                    class="inputfield"
                 >
-            </div>
-            <br>
-            <div
-                style="display: flex; flex-direction:row"
-            >
-                <p>Lijst aanwezigheden vandaag: </p>
-                <input type="file"
-                   title="Upload aanwezigheden"
-                   name="aanwezigheden"
-                   style="border: 1px solid black; padding: 5px;"
-                   required="required">
-            </div>
-            <br/>
-            <div
-                style="display: flex; flex-direction:row"
-            >
-                <p>Lijst verwachte aanwezigheden </p>
-                <input type="file"
-                   title="Upload verwachte leerlingen"
-                   name="verwachte_lln"
-                   style="border: 1px solid black; padding: 5px;"
-                   required="required">
-            </div>
-            
-            <p>
-            <input type="submit"
-                   value="Upload"
-                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
-        </form>
+                    <p class="inputfieldcontent">Dag van de week: </p>
+                    <input 
+                        type="text" 
+                        title="Dag van de week"
+                        name="dag"
+                        class="inputfieldcontent textinputarea"
+                        required="required"
+    
+                    >
+                </div>
+                <br>
+                <div
+                    class="inputfield"
+                >
+                    <p class="inputfieldcontent">Lijst aanwezigheden vandaag: </p>
+                    <input type="file"
+                       title="Upload aanwezigheden"
+                       name="aanwezigheden"
+                       class="inputfieldcontent uploadarea"
+                       required="required">
+                </div>
+                <br/>
+                <div
+                    class="inputfield"
+                >
+                    <p class="inputfieldcontent">Lijst verwachte aanwezigheden: </p>
+                    <input type="file"
+                       title="Upload verwachte leerlingen"
+                       name="verwachte_lln"
+                       class="inputfieldcontent uploadarea"
+                       required="required">
+                </div>
+                
+                <p>
+                <input type="submit"
+                       value="Upload"
+                       style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+            </form>
+        </div>
+        
 
         <p></p>
     </body>

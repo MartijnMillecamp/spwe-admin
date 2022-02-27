@@ -10,9 +10,17 @@
 > python manage.py runserver
 ```
 Check localhost
-5) 
+5) Push to heroku
+```
+> git push heroku main
+```
+6) Check if it is working
+```
+> heroku open
+```
 
 
 # tutorials
 https://learndjango.com/tutorials/django-login-and-logout-tutorial //failed
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication

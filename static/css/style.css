@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 300
+}
+
+#header{
+    height:50px;
+    background-color: #28a6ec;
+}
+
+#formcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding: 5%;
+}
+
+.inputfield{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+    height: 50px;
+}
+
+.inputfieldcontent{
+    margin: 5px;
+}
+
+.uploadarea{
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: dashed;
+    background-color: whitesmoke;
+    color: #282828;
+    height: 40px;
+    padding: 8px;
+}
+
+.textinputarea{
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: solid;
+    background-color: whitesmoke;
+    color: #282828;
+    height: 40px;
+    padding: 8px;
+}
+
+button{
+    background-color: #28a6ec;
+}
